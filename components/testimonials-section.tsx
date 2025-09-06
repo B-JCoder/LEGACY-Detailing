@@ -60,12 +60,12 @@ export function TestimonialsSection() {
   }, [])
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">What Our Customers Say</h2>
-            <p className="text-lg text-muted-foreground text-pretty">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">What Our Customers Say</h2>
+            <p className="text-lg text-white text-pretty">
               Don't just take our word for it. Here&apos;s what our satisfied customers have to say about our service.
             </p>
           </div>

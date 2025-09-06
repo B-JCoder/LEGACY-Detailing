@@ -41,12 +41,12 @@ export function ServicesSection() {
   }
 
   return (
-    <section id="services" className="py-20 bg-muted/30">
+    <section id="services" className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Services</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Our Services</h2>
+            <p className="text-lg text-white max-w-3xl mx-auto text-pretty">
               Professional mobile detailing services tailored to your needs. We use premium products and proven
               techniques for exceptional results.
             </p>
@@ -90,7 +90,7 @@ export function ServicesSection() {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-6">
+            <p className="text-white mb-6">
               Need a custom service package? We're happy to create a solution that fits your needs.
             </p>
             <Button

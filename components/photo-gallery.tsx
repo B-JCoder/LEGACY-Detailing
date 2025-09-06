@@ -44,12 +44,12 @@ export function PhotoGallery() {
   ]
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Work Gallery</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Our Work Gallery</h2>
+            <p className="text-lg text-white max-w-3xl mx-auto text-pretty">
               See the transformation we bring to every vehicle. From everyday cars to luxury vehicles, we treat each one
               with the same level of care and attention to detail.
             </p>

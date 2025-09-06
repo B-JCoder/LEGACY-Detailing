@@ -65,12 +65,12 @@ export function PricingSection() {
   }
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Transparent Pricing</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Transparent Pricing</h2>
+            <p className="text-lg text-white max-w-3xl mx-auto text-pretty">
               No hidden fees, no surprises. Choose the service that fits your needs and budget.
             </p>
           </div>
@@ -114,9 +114,9 @@ export function PricingSection() {
             ))}
           </div>
 
-          <div className="text-center mt-12 p-6 bg-muted/50 rounded-lg">
-            <h3 className="text-xl font-semibold text-foreground mb-2">Additional Services Available</h3>
-            <p className="text-muted-foreground mb-4">
+          <div className="text-center mt-12 p-6 bg-muted/150 rounded-lg">
+            <h3 className="text-xl font-semibold text-primary mb-2">Additional Services Available</h3>
+            <p className="text-white mb-4 ">
               Engine bay cleaning, headlight restoration, pet hair removal, and more. Contact us for custom pricing on
               additional services.
             </p>
