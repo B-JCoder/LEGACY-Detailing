@@ -39,8 +39,8 @@ export function ContactSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Book Your Detail Today</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Book Your Detail Today</h2>
+            <p className="text-lg text-white max-w-3xl mx-auto text-pretty">
               Ready to give your vehicle the care it deserves? Fill out the form below or give us a call. We'll get back
               to you within 24 hours to confirm your appointment.
             </p>

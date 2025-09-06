@@ -80,7 +80,7 @@ export function PhotoGallery() {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-4">
+            <p className="text-white mb-4">
               Want to see more of our work? Follow us on social media for daily updates!
             </p>
             <div className="flex justify-center gap-4">
