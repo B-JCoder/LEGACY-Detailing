@@ -66,7 +66,7 @@ export function TestimonialsSection() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">What Our Customers Say</h2>
             <p className="text-lg text-muted-foreground text-pretty">
-              Don't just take our word for it. Here's what our satisfied customers have to say about our service.
+              Don't just take our word for it. Here&apos;s what our satisfied customers have to say about our service.
             </p>
           </div>
 
@@ -116,7 +116,7 @@ export function TestimonialsSection() {
           {/* Dots indicator */}
           <div className="flex justify-center mt-6 space-x-2">
             {testimonials.map((_, index) => (
-              <button
+              <Button
                 key={index}
                 className={`w-3 h-3 rounded-full transition-colors ${
                   index === currentIndex ? "bg-primary" : "bg-muted-foreground/30"

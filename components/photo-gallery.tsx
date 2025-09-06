@@ -4,51 +4,43 @@ import { useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { X } from "lucide-react"
+import Image from "next/image"
 
 export function PhotoGallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   const galleryImages = [
     {
-      src: "/before-and-after-car-detailing-luxury-sedan.png",
+      src: "https://i.pinimg.com/1200x/7c/d1/0b/7cd10ba5d50eabb7adcded841a94e058.jpg",
       alt: "Luxury sedan before and after detailing",
       category: "Before & After",
     },
     {
-      src: "/placeholder-vfv4y.png",
+      src: "https://i.pinimg.com/736x/70/37/88/7037885767bafe64db2b8d176a0c9724.jpg",
       alt: "Interior detailing - leather seats",
       category: "Interior",
     },
     {
-      src: "/placeholder-nqr3p.png",
+      src: "https://i.pinimg.com/736x/96/3a/bd/963abd49d3eb71762adc27869d7d30bf.jpg",
       alt: "Exterior paint correction",
       category: "Exterior",
     },
     {
-      src: "/placeholder-7jmmr.png",
+      src: "https://i.pinimg.com/1200x/fb/8c/00/fb8c00d5c2fd2612516e46363206c9b9.jpg",
       alt: "Mobile detailing service",
       category: "Mobile Service",
     },
     {
-      src: "/placeholder-42bfh.png",
+      src: "https://i.pinimg.com/1200x/82/46/56/824656e17717c3a444983e40f1ca708f.jpg",
       alt: "Clay bar treatment on truck",
       category: "Clay & Seal",
     },
     {
-      src: "/placeholder-qwte6.png",
+      src: "https://i.pinimg.com/736x/fd/16/75/fd1675a1933159bd875f358b5bf49419.jpg",
       alt: "Dashboard cleaning",
       category: "Interior",
-    },
-    {
-      src: "/placeholder-4k2d0.png",
-      alt: "Wheel and tire detailing",
-      category: "Exterior",
-    },
-    {
-      src: "/placeholder-yqesk.png",
-      alt: "Full detail service",
-      category: "Full Detail",
-    },
+    }
+ 
   ]
 
   return (
@@ -67,11 +59,14 @@ export function PhotoGallery() {
             {galleryImages.map((image, index) => (
               <Card key={index} className="overflow-hidden cursor-pointer group">
                 <div className="relative aspect-square">
-                  <img
+                  <Image
                     src={image.src || "/placeholder.svg"}
                     alt={image.alt}
                     className="w-full h-full object-cover transition-transform group-hover:scale-105"
                     onClick={() => setSelectedImage(image.src)}
+                    
+                    width={400}
+                    height={400}
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
                   <div className="absolute bottom-2 left-2 right-2">
@@ -110,10 +105,13 @@ export function PhotoGallery() {
       {selectedImage && (
         <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
           <div className="relative max-w-4xl max-h-full">
-            <img
+            <Image
               src={selectedImage || "/placeholder.svg"}
               alt="Enlarged gallery image"
               className="max-w-full max-h-full object-contain"
+              width={800}
+              height={800}
+              
             />
             <Button
               variant="outline"

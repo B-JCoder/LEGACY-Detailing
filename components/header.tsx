@@ -21,13 +21,13 @@ export function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="hidden lg:flex items-center justify-end py-2 text-sm text-muted-foreground border-b border-secondary/30">
           <div className="flex items-center gap-6">
-            <a href="tel:9199880582" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <a href="tel:9199880582" className="flex items-center gap-2 text-white hover:text-primary transition-colors">
               <Phone className="h-4 w-4" />
               (919) 988-0582
             </a>
             <a
               href="mailto:Legacydetailing2025@gmail.com"
-              className="flex items-center gap-2 hover:text-primary transition-colors"
+              className="flex items-center gap-2 hover:text-primary transition-colors text-white"
             >
               <Mail className="h-4 w-4" />
               Legacydetailing2025@gmail.com
