@@ -78,5 +78,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B-JCoder/LEGACY-Detailing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/B-JCoder/LEGACY-Detailing/issues"
+  },
+  "homepage": "https://github.com/B-JCoder/LEGACY-Detailing#readme",
   "description": ""
 }

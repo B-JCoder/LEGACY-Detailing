@@ -94,13 +94,18 @@ export function ContactSection() {
                         <SelectTrigger>
                           <SelectValue placeholder="Select a service" />
                         </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="interior">Interior Only ($80)</SelectItem>
-                          <SelectItem value="exterior">Exterior Only ($60)</SelectItem>
-                          <SelectItem value="full">Full Detail ($120)</SelectItem>
-                          <SelectItem value="clay-seal">Clay & Seal ($180)</SelectItem>
-                          <SelectItem value="custom">Custom Quote</SelectItem>
-                        </SelectContent>
+                      <SelectContent>
+  <SelectItem value="full">Full Detail Service ($200)</SelectItem>
+  <SelectItem value="interior">Interior Only Service ($150)</SelectItem>
+  <SelectItem value="exterior">Exterior Only Service ($80)</SelectItem>
+  <SelectItem value="clay-seal">Clay and Seal Service ($135)</SelectItem>
+  <SelectItem value="headlight">Headlight Restoration ($85)</SelectItem>
+  <SelectItem value="hair-removal">Hair Removal ($50)</SelectItem>
+  <SelectItem value="shampoo">Seat/Carpet Shampooing ($75)</SelectItem>
+  <SelectItem value="clay-bar">Clay Bar Service ($60)</SelectItem>
+  <SelectItem value="custom">Custom Quote</SelectItem>
+</SelectContent>
+
                       </Select>
                     </div>
                     <div>

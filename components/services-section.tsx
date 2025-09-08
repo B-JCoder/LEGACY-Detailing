@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Car, Sparkles, Droplets, Shield, Zap } from "lucide-react"
+import { Car, Sparkles, Droplets, Shield, Zap, Sun, Scissors, Brush, CircleDot } from "lucide-react"
 
 export function ServicesSection() {
   const services = [
@@ -11,6 +11,7 @@ export function ServicesSection() {
       title: "Full Detail Service",
       description: "Complete interior and exterior detailing for the ultimate clean.",
       features: ["Exterior wash & wax", "Interior deep clean", "Tire shine", "Window cleaning"],
+      price: "Starts at $200",
       popular: true,
     },
     {
@@ -18,18 +19,49 @@ export function ServicesSection() {
       title: "Interior Only Service",
       description: "Deep cleaning and protection for your vehicle's interior.",
       features: ["Vacuum & shampoo", "Dashboard cleaning", "Leather conditioning", "Odor elimination"],
+      price: "Starts at $150",
     },
     {
       icon: Droplets,
       title: "Exterior Only Service",
       description: "Professional exterior cleaning and protection.",
       features: ["Hand wash", "Wax application", "Tire cleaning", "Chrome polishing"],
+      price: "Starts at $80",
     },
     {
       icon: Shield,
       title: "Clay and Seal Service",
       description: "Advanced paint correction and protection treatment.",
       features: ["Clay bar treatment", "Paint sealant", "Contaminant removal", "UV protection"],
+      price: "Starts at $135",
+    },
+    {
+      icon: Sun,
+      title: "Headlight Restoration",
+      description: "Restore clarity and brightness to your headlights.",
+      features: ["Lens cleaning", "Scratch removal", "UV protection", "Polishing"],
+      price: "Starts at $85",
+    },
+    {
+      icon: Scissors,
+      title: "Hair Removal",
+      description: "Thorough removal of pet hair and other debris.",
+      features: ["Pet hair removal", "Lint cleaning", "Deep vacuuming"],
+      price: "Starts at $50",
+    },
+    {
+      icon: Brush,
+      title: "Seat/Carpet Shampooing",
+      description: "Deep cleaning for fabric seats and carpets.",
+      features: ["Stain removal", "Fabric shampooing", "Odor elimination"],
+      price: "Starts at $75",
+    },
+    {
+      icon: CircleDot,
+      title: "Clay Bar Service",
+      description: "Remove embedded contaminants for a smooth finish.",
+      features: ["Clay bar treatment", "Surface decontamination", "Smooth paint finish"],
+      price: "Starts at $60",
     },
   ]
 
@@ -52,7 +84,7 @@ export function ServicesSection() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Card key={index} className={`relative ${service.popular ? "ring-2 ring-primary" : ""}`}>
                 {service.popular && (
@@ -68,6 +100,7 @@ export function ServicesSection() {
                   </div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
                   <p className="text-muted-foreground text-pretty">{service.description}</p>
+                  <p className="text-primary font-semibold mt-2">{service.price}</p>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 mb-6">
