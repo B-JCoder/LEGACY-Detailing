@@ -99,19 +99,19 @@ export function ServicesSection() {
             <TabsList className="flex justify-center gap-4 mb-10 flex-wrap">
               <TabsTrigger
                 value="main"
-                className="text-white border border-primary px-6 py-2 rounded-xl transition-all data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                className="text-black border border-primary px-6 py-2 rounded-xl transition-all data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
               >
                 Main Services
               </TabsTrigger>
               <TabsTrigger
                 value="other"
-                className="text-white border border-primary px-6 py-2 rounded-xl transition-all data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                className="text-black border border-primary px-6 py-2 rounded-xl transition-all data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
               >
                 Other Services
               </TabsTrigger>
               <TabsTrigger
                 value="maintenance"
-                className="text-white border border-primary px-6 py-2 rounded-xl transition-all data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                className="text-black border border-primary px-6 py-2 rounded-xl transition-all data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
               >
                 Maintenance Prices
               </TabsTrigger>
@@ -147,7 +147,7 @@ export function ServicesSection() {
                         {service.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center gap-2">
                             <Zap className="h-4 w-4 text-primary flex-shrink-0" />
-                            <span className="text-sm text-white">{feature}</span>
+                            <span className="text-sm text-black">{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -183,7 +183,7 @@ export function ServicesSection() {
                         {service.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center gap-2">
                             <Zap className="h-4 w-4 text-primary flex-shrink-0" />
-                            <span className="text-sm text-white">{feature}</span>
+                            <span className="text-sm text-black">{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -216,7 +216,7 @@ export function ServicesSection() {
                     {maintenancePrices.map((item, index) => (
                       <li
                         key={index}
-                        className="flex justify-between items-center border-b border-white/10 pb-2 text-white"
+                        className="flex justify-between items-center border-b border-white/10 pb-2 text-black"
                       >
                         <span className="font-medium">{item.vehicle}</span>
                         <span className="text-primary font-bold">{item.price}</span>
