@@ -11,34 +11,34 @@ export function PhotoGallery() {
 
   const galleryImages = [
     {
-      src: "https://i.pinimg.com/1200x/7c/d1/0b/7cd10ba5d50eabb7adcded841a94e058.jpg",
+      src: "/images/afterinteriorcleaning.jpg",
       alt: "Luxury sedan before and after detailing",
-      category: "Before & After",
+      category: "After Interior Cleaning",
     },
     {
-      src: "https://i.pinimg.com/736x/70/37/88/7037885767bafe64db2b8d176a0c9724.jpg",
+      src: "/images/beforeinteriorcleaning.jpg",
       alt: "Interior detailing - leather seats",
-      category: "Interior",
+      category: "Before Interior Cleaning",
     },
     {
-      src: "https://i.pinimg.com/736x/96/3a/bd/963abd49d3eb71762adc27869d7d30bf.jpg",
+      src: "/images/CLAYANDSEAL.jpg",
       alt: "Exterior paint correction",
+      category: "CLAY AND SEAL",
+    },
+    {
+      src: "/images/extirior.jpg",
+      alt: "Mobile detailing service",
       category: "Exterior",
     },
     {
-      src: "https://i.pinimg.com/1200x/fb/8c/00/fb8c00d5c2fd2612516e46363206c9b9.jpg",
-      alt: "Mobile detailing service",
-      category: "Mobile Service",
-    },
-    {
-      src: "https://i.pinimg.com/1200x/82/46/56/824656e17717c3a444983e40f1ca708f.jpg",
+      src: "/images/fulldetailexterior.jpg",
       alt: "Clay bar treatment on truck",
-      category: "Clay & Seal",
+      category: "Full Detail Exterior",
     },
     {
-      src: "https://i.pinimg.com/736x/fd/16/75/fd1675a1933159bd875f358b5bf49419.jpg",
+      src: "/images/fulldetailinterior.jpg",
       alt: "Dashboard cleaning",
-      category: "Interior",
+      category: "FUll Detail Interior",
     }
  
   ]
