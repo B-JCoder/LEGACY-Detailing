@@ -2,10 +2,11 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Car, Sparkles, Droplets, Shield, Zap, Sun, Scissors, Brush, CircleDot } from "lucide-react"
 
 export function ServicesSection() {
-  const services = [
+  const mainServices = [
     {
       icon: Car,
       title: "Full Detail Service",
@@ -35,6 +36,9 @@ export function ServicesSection() {
       features: ["Clay bar treatment", "Paint sealant", "Contaminant removal", "UV protection"],
       price: "Starts at $135",
     },
+  ]
+
+  const otherServices = [
     {
       icon: Sun,
       title: "Headlight Restoration",
@@ -76,65 +80,110 @@ export function ServicesSection() {
     <section id="services" className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Our Services</h2>
-            <p className="text-lg text-white max-w-3xl mx-auto text-pretty">
+            <p className="text-lg text-white max-w-3xl mx-auto">
               Professional mobile detailing services tailored to your needs. We use premium products and proven
               techniques for exceptional results.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className={`relative ${service.popular ? "ring-2 ring-primary" : ""}`}>
-                {service.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-                <CardHeader className="text-center pb-4">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-lg mb-4 mx-auto">
-                    <service.icon className="h-8 w-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                  <p className="text-muted-foreground text-pretty">{service.description}</p>
-                  <p className="text-primary font-semibold mt-2">{service.price}</p>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-2">
-                        <Zap className="h-4 w-4 text-primary flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button
-                    onClick={scrollToContact}
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                  >
-                    Book This Service
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          {/* Tabs */}
+          <Tabs defaultValue="main" className="w-full">
+            <TabsList className="flex justify-center gap-4 mb-10 flex-wrap">
+              <TabsTrigger
+                value="main"
+                className="text-white border border-primary px-6 py-2 rounded-xl transition-all data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              >
+                Main Services
+              </TabsTrigger>
+              <TabsTrigger
+                value="other"
+                className="text-white border border-primary px-6 py-2 rounded-xl transition-all data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              >
+                Other Services
+              </TabsTrigger>
+            </TabsList>
 
-          <div className="text-center mt-12">
-            <p className="text-white mb-6">
-              Need a custom service package? We're happy to create a solution that fits your needs.
-            </p>
-            <Button
-              onClick={scrollToContact}
-              variant="outline"
-              size="lg"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-            >
-              Get Custom Quote
-            </Button>
-          </div>
+            {/* Main Services */}
+            <TabsContent value="main">
+              <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                {mainServices.map((service, index) => (
+                  <Card key={index} className={`relative shadow-lg hover:shadow-2xl transition-all duration-300 ${service.popular ? "ring-2 ring-primary" : ""}`}>
+                    {service.popular && (
+                      <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                        <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium shadow-md">
+                          Most Popular
+                        </span>
+                      </div>
+                    )}
+                    <CardHeader className="text-center pb-4">
+                      <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-4 mx-auto">
+                        <service.icon className="h-8 w-8 text-primary" />
+                      </div>
+                      <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
+                      <p className="text-muted-foreground">{service.description}</p>
+                      <p className="text-primary font-semibold mt-2">{service.price}</p>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2 mb-6">
+                        {service.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-center gap-2">
+                            <Zap className="h-4 w-4 text-primary flex-shrink-0" />
+                            <span className="text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="flex justify-center">
+                        <Button
+                          onClick={scrollToContact}
+                          className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 rounded-xl"
+                        >
+                          Book This Service
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            {/* Other Services */}
+            <TabsContent value="other">
+              <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                {otherServices.map((service, index) => (
+                  <Card key={index} className="relative shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <CardHeader className="text-center pb-4">
+                      <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-4 mx-auto">
+                        <service.icon className="h-8 w-8 text-primary" />
+                      </div>
+                      <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
+                      <p className="text-muted-foreground">{service.description}</p>
+                      <p className="text-primary font-semibold mt-2">{service.price}</p>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2 mb-6">
+                        {service.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-center gap-2 text-black">
+                            <Zap className="h-4 w-4 text-primary flex-shrink-0" />
+                            <span className="text-sm ">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="flex justify-center">
+                        <Button
+                          onClick={scrollToContact}
+                          className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 rounded-xl"
+                        >
+                          Book This Service
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
     </section>
