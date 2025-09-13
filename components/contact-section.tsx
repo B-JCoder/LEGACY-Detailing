@@ -1,38 +1,24 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from "lucide-react"
+import { useState } from "react"
 
 export function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    location: "",
-    date: "",
-    time: "",
-    message: "",
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
-    alert("Thank you for your booking request! We'll contact you within 24 hours to confirm your appointment.")
-  }
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-  }
+  const [service, setService] = useState("")
+  const [location, setLocation] = useState("")
+  const [time, setTime] = useState("")
 
   return (
     <section id="contact" className="py-20 bg-black">
@@ -40,8 +26,8 @@ export function ContactSection() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Book Your Detail Today</h2>
-            <p className="text-lg text-white max-w-3xl mx-auto text-pretty">
-              Ready to give your vehicle the care it deserves? Fill out the form below or give us a call. We'll get back
+            <p className="text-lg text-white max-w-3xl mx-auto">
+              Ready to give your vehicle the care it deserves? Fill out the form below or give us a call. We will get back
               to you within 24 hours to confirm your appointment.
             </p>
           </div>
@@ -53,101 +39,85 @@ export function ContactSection() {
                 <CardTitle>Schedule Your Service</CardTitle>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form
+                  action="https://formsubmit.co/Legacydetailing2025@gmail.com"
+                  method="POST"
+                  className="space-y-4"
+                >
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="name">Full Name *</Label>
-                      <Input
-                        id="name"
-                        value={formData.name}
-                        onChange={(e) => handleInputChange("name", e.target.value)}
-                        required
-                      />
+                      <Input id="name" name="name" required />
                     </div>
                     <div>
                       <Label htmlFor="phone">Phone Number *</Label>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={(e) => handleInputChange("phone", e.target.value)}
-                        required
-                      />
+                      <Input id="phone" name="phone" type="tel" required />
                     </div>
                   </div>
 
                   <div>
                     <Label htmlFor="email">Email Address *</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => handleInputChange("email", e.target.value)}
-                      required
-                    />
+                    <Input id="email" name="email" type="email" required />
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="service">Service Type *</Label>
-                      <Select onValueChange={(value) => handleInputChange("service", value)}>
+                      <Label>Service Type *</Label>
+                      <Select name="service" required onValueChange={(value) => setService(value)}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select a service" />
                         </SelectTrigger>
-                      <SelectContent>
-  <SelectItem value="full">Full Detail Service ($200)</SelectItem>
-  <SelectItem value="interior">Interior Only Service ($150)</SelectItem>
-  <SelectItem value="exterior">Exterior Only Service ($80)</SelectItem>
-  <SelectItem value="clay-seal">Clay and Seal Service ($135)</SelectItem>
-  <SelectItem value="headlight">Headlight Restoration ($85)</SelectItem>
-  <SelectItem value="hair-removal">Hair Removal ($50)</SelectItem>
-  <SelectItem value="shampoo">Seat/Carpet Shampooing ($75)</SelectItem>
-  <SelectItem value="clay-bar">Clay Bar Service ($60)</SelectItem>
-  <SelectItem value="custom">Custom Quote</SelectItem>
-</SelectContent>
-
+                        <SelectContent>
+                          <SelectItem value="Full Detail Service ($200)">Full Detail Service ($200)</SelectItem>
+                          <SelectItem value="Interior Only Service ($150)">Interior Only Service ($150)</SelectItem>
+                          <SelectItem value="Exterior Only Service ($80)">Exterior Only Service ($80)</SelectItem>
+                          <SelectItem value="Clay and Seal Service ($135)">Clay and Seal Service ($135)</SelectItem>
+                          <SelectItem value="Headlight Restoration ($85)">Headlight Restoration ($85)</SelectItem>
+                          <SelectItem value="Hair Removal ($50)">Hair Removal ($50)</SelectItem>
+                          <SelectItem value="Seat/Carpet Shampooing ($75)">Seat/Carpet Shampooing ($75)</SelectItem>
+                          <SelectItem value="Clay Bar Service ($60)">Clay Bar Service ($60)</SelectItem>
+                          <SelectItem value="Custom Quote">Custom Quote</SelectItem>
+                        </SelectContent>
                       </Select>
+                      <input type="hidden" name="service" value={service} />
                     </div>
                     <div>
-                      <Label htmlFor="location">Service Location *</Label>
-                      <Select onValueChange={(value) => handleInputChange("location", value)}>
+                      <Label>Service Location *</Label>
+                      <Select name="location" required onValueChange={(value) => setLocation(value)}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select your city" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="greenville">Greenville</SelectItem>
-                          <SelectItem value="kinston">Kinston</SelectItem>
-                          <SelectItem value="farmville">Farmville</SelectItem>
-                          <SelectItem value="new-bern">New Bern</SelectItem>
+                          <SelectItem value="Greenville">Greenville</SelectItem>
+                          <SelectItem value="Kinston">Kinston</SelectItem>
+                          <SelectItem value="Farmville">Farmville</SelectItem>
+                          <SelectItem value="New Bern">New Bern</SelectItem>
                         </SelectContent>
                       </Select>
+                      <input type="hidden" name="location" value={location} />
                     </div>
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="date">Preferred Date</Label>
-                      <Input
-                        id="date"
-                        type="date"
-                        value={formData.date}
-                        onChange={(e) => handleInputChange("date", e.target.value)}
-                      />
+                      <Input id="date" name="date" type="date" />
                     </div>
                     <div>
-                      <Label htmlFor="time">Preferred Time</Label>
-                      <Select onValueChange={(value) => handleInputChange("time", value)}>
+                      <Label>Preferred Time</Label>
+                      <Select name="time" onValueChange={(value) => setTime(value)}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select time" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="8am">8:00 AM</SelectItem>
-                          <SelectItem value="10am">10:00 AM</SelectItem>
-                          <SelectItem value="12pm">12:00 PM</SelectItem>
-                          <SelectItem value="2pm">2:00 PM</SelectItem>
-                          <SelectItem value="4pm">4:00 PM</SelectItem>
+                          <SelectItem value="8:00 AM">8:00 AM</SelectItem>
+                          <SelectItem value="10:00 AM">10:00 AM</SelectItem>
+                          <SelectItem value="12:00 PM">12:00 PM</SelectItem>
+                          <SelectItem value="2:00 PM">2:00 PM</SelectItem>
+                          <SelectItem value="4:00 PM">4:00 PM</SelectItem>
                         </SelectContent>
                       </Select>
+                      <input type="hidden" name="time" value={time} />
                     </div>
                   </div>
 
@@ -155,21 +125,27 @@ export function ContactSection() {
                     <Label htmlFor="message">Additional Details</Label>
                     <Textarea
                       id="message"
+                      name="message"
                       placeholder="Tell us about your vehicle, specific concerns, or special requests..."
-                      value={formData.message}
-                      onChange={(e) => handleInputChange("message", e.target.value)}
                       rows={4}
                     />
                   </div>
 
-                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                  {/* Hidden Fields (optional features) */}
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_next" value="https://yourdomain.com/thank-you" />
+
+                  <Button
+                    type="submit"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                  >
                     Book My Detail
                   </Button>
                 </form>
               </CardContent>
             </Card>
 
-            {/* Contact Information */}
+            {/* Contact Info */}
             <div className="space-y-6">
               <Card>
                 <CardHeader>
@@ -211,7 +187,7 @@ export function ContactSection() {
                     <Clock className="h-5 w-5 text-primary" />
                     <div>
                       <p className="font-medium">Hours</p>
-                      <p className="text-muted-foreground">Mon-Sat: 8AM-6PM</p>
+                      <p className="text-muted-foreground">Mon–Sat: 8AM–6PM</p>
                       <p className="text-muted-foreground">Sunday: By Appointment</p>
                     </div>
                   </div>
@@ -234,7 +210,8 @@ export function ContactSection() {
                     <Button
                       variant="outline"
                       size="icon"
-                      className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                      className="border-primary text-primary hover:bg-primary hover:text-primary
+-foreground bg-transparent"
                     >
                       <Instagram className="h-4 w-4" />
                     </Button>
